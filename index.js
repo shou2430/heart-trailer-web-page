@@ -2,7 +2,7 @@ const bodyE1 = document.querySelector("body");
 
 bodyE1.addEventListener("mousemove", function(heartEvent) {animate(heartEvent)});
 // let the effect works on phone
-document.addEventListener('touchstart', function(heartEvent) {animate(heartEvent)});        
+// document.addEventListener('touchstart', function(heartEvent) {animate(heartEvent)});        
 document.addEventListener('touchmove', function(heartEvent) {animate(heartEvent)});
 
 
