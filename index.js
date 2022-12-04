@@ -9,8 +9,11 @@ bodyE1.addEventListener("mousemove", e => {
 bodyE1.addEventListener('touchmove', e =>{
     // console.log("move");
     // console.log(e.targetTouches[0]["pageX"]);
-    let xPos = e.targetTouches[0]["pageX"];
-    let yPos = e.targetTouches[0]["pageY"]
+    // console.log(e.touches)
+    // let xPos = e.targetTouches[0]["pageX"];
+    // let yPos = e.targetTouches[0]["pageY"];
+    let xPos = e.touches[0]["pageX"];
+    let yPos = e.touches[0]["pageY"];
     animate(e, xPos, yPos);    
 });
 
