@@ -1,15 +1,24 @@
 const bodyE1 = document.querySelector("body");
 
-bodyE1.addEventListener("mousemove", function(heartEvent) {animate(heartEvent)});
-// let the effect works on phone
-// document.addEventListener('touchstart', function(heartEvent) {animate(heartEvent)});        
-document.addEventListener('touchmove', function(heartEvent) {animate(heartEvent)});
+bodyE1.addEventListener("mousemove", e => {
+    let xPos = e.offsetX;
+    let yPos = e.offsetY;
+    animate(e, xPos, yPos);
+});
+
+bodyE1.addEventListener('touchmove', e =>{
+    // console.log("move");
+    // console.log(e.targetTouches[0]["pageX"]);
+    let xPos = e.targetTouches[0]["pageX"];
+    let yPos = e.targetTouches[0]["pageY"]
+    animate(e, xPos, yPos);    
+});
 
 
-function animate(event){
-    const xPos = event.offsetX;
-    const yPos = event.offsetY;
+function animate(event, xPos, yPos){
     const spanE1 = document.createElement("span");
+
+    // console.log("xpos: ", xPos);
     
     spanE1.style.left = xPos + "px";
     spanE1.style.top = yPos + "px";
